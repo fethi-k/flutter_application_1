@@ -1,6 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/theme/light_mode.dart';
 import 'package:provider/provider.dart';
+import 'pages/login_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +13,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
+      theme: lightMode,
+    );
+    /*return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
         title: 'Namer App',
@@ -21,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
         home: MyHomePage(),
       ),
-    );
+    );*/
   }
 }
 
